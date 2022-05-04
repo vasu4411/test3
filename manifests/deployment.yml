@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vasutest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vasutest
+  template:
+    metadata:
+      labels:
+        app: vasutest 
+    spec:
+      containers:
+        - name: vasutest 
+          image: demoreg12345.azurecr.io/vasutest
+          ports:
+          - containerPort: 5000
